@@ -1,6 +1,6 @@
 const Account = require('../models/Account');
 
-// Create a new account
+
 exports.createAccount = async (req, res) => {
   try {
     const { account_name, website } = req.body;
@@ -19,7 +19,7 @@ exports.createAccount = async (req, res) => {
   }
 };
 
-// Get all accounts
+
 exports.getAccounts = async (req, res) => {
   try {
     const accounts = await Account.find().populate('created_by updated_by', 'email');
@@ -29,7 +29,6 @@ exports.getAccounts = async (req, res) => {
   }
 };
 
-// Update an account
 exports.updateAccount = async (req, res) => {
   try {
     const { id } = req.params;
@@ -48,7 +47,7 @@ exports.updateAccount = async (req, res) => {
   }
 };
 
-// Delete an account
+
 exports.deleteAccount = async (req, res) => {
   try {
     const { id } = req.params;
