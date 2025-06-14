@@ -1,6 +1,6 @@
 const Account = require('../models/Account');
 const Log = require('../models/Log');
-const queue = require('../jobs/queue');
+const dataQueue = require('../jobs/queue');
 
 exports.handleIncomingData = async (req, res) => {
   const token = req.headers['cl-x-token'];
@@ -18,7 +18,7 @@ exports.handleIncomingData = async (req, res) => {
     }
 
    
-    await queue.add({
+    await dataQueue.add({
       event_id: eventId,
       account,
       data

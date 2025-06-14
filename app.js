@@ -7,6 +7,8 @@ const accountRoutes = require('./routes/accountRoutes');
 const destinationRoutes = require('./routes/destinationRoutes');
 const dataHandlerRoutes = require('./routes/dataHandlerRoutes');
 const logRoutes = require('./routes/logRoutes');
+const memberRoutes = require('./routes/memberRoutes');
+
 
 
 const app = express();
@@ -20,5 +22,6 @@ app.use('/api/accounts', accountRoutes);
 app.use('/api/destinations', destinationRoutes);
 app.use('/server', dataHandlerRoutes);
 app.use('/api/logs', logRoutes);
+app.use('/api/members', memberRoutes);
 
 module.exports = app;

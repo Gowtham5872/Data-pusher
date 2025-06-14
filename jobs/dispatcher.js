@@ -1,10 +1,9 @@
+
 const axios = require('axios');
-const dataQueue = require('./queue');
 const Log = require('../models/Log');
 const Destination = require('../models/Destination');
 
-dataQueue.process(async (job) => {
-  const { account, event_id, data } = job.data;
+const dispatch = async ({ account, event_id, data }) => {
   const destinations = await Destination.find({ account_id: account._id });
 
   for (const dest of destinations) {
@@ -37,4 +36,6 @@ dataQueue.process(async (job) => {
       });
     }
   }
-});
+};
+
+module.exports = dispatch;

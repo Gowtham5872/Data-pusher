@@ -10,4 +10,4 @@ const accountSchema = new mongoose.Schema({
   updated_by: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Account', accountSchema);
+module.exports = mongoose.models.Account || mongoose.model('Account', accountSchema);
