@@ -1,0 +1,816 @@
+{
+	"info": {
+		"_postman_id": "f2bc21a3-8b38-4d36-b483-967fa6573a67",
+		"name": "Data_pusher",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33399466"
+	},
+	"item": [
+		{
+			"name": "Log",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGQxN2EwZmM2YTEwZjI3ZGRiNjgzMyIsImFjY291bnRfaWQiOiI2ODRkMTdhMGZjNmExMGYyN2RkYjY4MzUiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3NDk4ODI4MzEsImV4cCI6MTc1MDQ4NzYzMX0.E2aX6s00YaM8UOc8uhGBh29NiWl6Y3fTrxpN3pChgHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/logs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"logs"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": [
+				{
+					"name": "response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"logs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1158"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"486-45McfnsRCysUYQpZ23qgV2/l6XU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 14 Jun 2025 08:15:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"684d2f8774795a188b2ecca9\",\n            \"event_id\": \"order.created\",\n            \"account_id\": {\n                \"_id\": \"684d1a53fc6a10f27ddb6840\",\n                \"account_name\": \"New Company Name\",\n                \"website\": \"https://newcompany.com\",\n                \"created_by\": \"684d17a0fc6a10f27ddb6833\",\n                \"updated_by\": \"684d17a0fc6a10f27ddb6833\",\n                \"account_id\": \"23912ca1-d9d3-4b32-9475-28eaf7e4ceaa\",\n                \"app_secret_token\": \"2be1a9b9-76e3-476a-a6fd-dc57270f872a\",\n                \"createdAt\": \"2025-06-14T06:44:35.665Z\",\n                \"updatedAt\": \"2025-06-14T06:44:35.665Z\",\n                \"__v\": 0\n            },\n            \"destination_id\": {\n                \"_id\": \"684d1ed7fc6a10f27ddb6849\",\n                \"account_id\": \"684d1a53fc6a10f27ddb6840\",\n                \"url\": \"https://webhook.site/8ad7f661-e00b-4e6c-9432-bdd1c81081b5\",\n                \"http_method\": \"POST\",\n                \"headers\": {\n                    \"X-COMPANY-ID\": \"23912ca1\",\n                    \"Authorization\": \"Bearer my-secret-token\"\n                },\n                \"created_by\": \"684d17a0fc6a10f27ddb6833\",\n                \"updated_by\": \"684d17a0fc6a10f27ddb6833\",\n                \"createdAt\": \"2025-06-14T07:03:51.483Z\",\n                \"updatedAt\": \"2025-06-14T07:03:51.483Z\",\n                \"__v\": 0\n            },\n            \"received_data\": {\n                \"account_id\": \"684d1a53fc6a10f27ddb6840\",\n                \"payload\": {\n                    \"order_id\": \"ORD123456\",\n                    \"amount\": 299.99,\n                    \"status\": \"confirmed\"\n                }\n            },\n            \"status\": \"success\",\n            \"received_timestamp\": \"2025-06-14T08:15:03.077Z\",\n            \"processed_timestamp\": \"2025-06-14T08:15:03.077Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"pass1234\",\n  \"account_name\": \"Example Corp\",\n  \"website\": \"https://example.com\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"pass1234\",\n  \"account_name\": \"Example Corp\",\n  \"website\": \"https://example.com\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "271"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10f-8Adtcv3d8QCKVufoXqSbiPC/+v0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 14 Jun 2025 06:33:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGQxN2EwZmM2YTEwZjI3ZGRiNjgzMyIsImFjY291bnRfaWQiOiI2ODRkMTdhMGZjNmExMGYyN2RkYjY4MzUiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3NDk4ODI3ODQsImV4cCI6MTc1MDQ4NzU4NH0.eqTNp52x_8JzAikjXv3NtXVoPwnv_pFC_ZNmouvDazc\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"pass1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"pass1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "271"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10f-Gnl28z61OOUDgZ/7Q5fcWC3SwNY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 14 Jun 2025 06:33:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGQxN2EwZmM2YTEwZjI3ZGRiNjgzMyIsImFjY291bnRfaWQiOiI2ODRkMTdhMGZjNmExMGYyN2RkYjY4MzUiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3NDk4ODI4MzEsImV4cCI6MTc1MDQ4NzYzMX0.E2aX6s00YaM8UOc8uhGBh29NiWl6Y3fTrxpN3pChgHY\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Account Created",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGQxN2EwZmM2YTEwZjI3ZGRiNjgzMyIsImFjY291bnRfaWQiOiI2ODRkMTdhMGZjNmExMGYyN2RkYjY4MzUiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3NDk4ODI4MzEsImV4cCI6MTc1MDQ4NzYzMX0.E2aX6s00YaM8UOc8uhGBh29NiWl6Y3fTrxpN3pChgHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"account_name\": \"New Company Name\",\n  \"website\": \"https://newcompany.com\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"accounts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"account_name\": \"New Company Name\",\n  \"website\": \"https://newcompany.com\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"accounts"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "403"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"193-9asVG7bffcB0JXf37it0lpkdLuw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 14 Jun 2025 06:44:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"account_name\": \"New Company Name\",\n        \"website\": \"https://newcompany.com\",\n        \"created_by\": \"684d17a0fc6a10f27ddb6833\",\n        \"updated_by\": \"684d17a0fc6a10f27ddb6833\",\n        \"_id\": \"684d1a53fc6a10f27ddb6840\",\n        \"account_id\": \"23912ca1-d9d3-4b32-9475-28eaf7e4ceaa\",\n        \"app_secret_token\": \"2be1a9b9-76e3-476a-a6fd-dc57270f872a\",\n        \"createdAt\": \"2025-06-14T06:44:35.665Z\",\n        \"updatedAt\": \"2025-06-14T06:44:35.665Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "destination created",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGQxN2EwZmM2YTEwZjI3ZGRiNjgzMyIsImFjY291bnRfaWQiOiI2ODRkMTdhMGZjNmExMGYyN2RkYjY4MzUiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3NDk4ODI4MzEsImV4cCI6MTc1MDQ4NzYzMX0.E2aX6s00YaM8UOc8uhGBh29NiWl6Y3fTrxpN3pChgHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"account_id\": \"684d1a53fc6a10f27ddb6840\", \n  \"url\": \"https://webhook.site/8ad7f661-e00b-4e6c-9432-bdd1c81081b5\",\n  \"http_method\": \"POST\",\n  \"headers\": {\n    \"X-COMPANY-ID\": \"23912ca1\",\n    \"Authorization\": \"Bearer my-secret-token\"\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/destinations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"destinations"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"account_id\": \"684d1a53fc6a10f27ddb6840\", \n  \"url\": \"https://webhook.site/8ad7f661-e00b-4e6c-9432-bdd1c81081b5\",\n  \"http_method\": \"POST\",\n  \"headers\": {\n    \"X-COMPANY-ID\": \"23912ca1\",\n    \"Authorization\": \"Bearer my-secret-token\"\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/destinations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"destinations"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "430"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1ae-XD+zmX0XBUoRhYl834nL1zfRYXU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 14 Jun 2025 07:03:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"account_id\": \"684d1a53fc6a10f27ddb6840\",\n        \"url\": \"https://webhook.site/8ad7f661-e00b-4e6c-9432-bdd1c81081b5\",\n        \"http_method\": \"POST\",\n        \"headers\": {\n            \"X-COMPANY-ID\": \"23912ca1\",\n            \"Authorization\": \"Bearer my-secret-token\"\n        },\n        \"created_by\": \"684d17a0fc6a10f27ddb6833\",\n        \"updated_by\": \"684d17a0fc6a10f27ddb6833\",\n        \"_id\": \"684d1ed7fc6a10f27ddb6849\",\n        \"createdAt\": \"2025-06-14T07:03:51.483Z\",\n        \"updatedAt\": \"2025-06-14T07:03:51.483Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "SendingData",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGQxN2EwZmM2YTEwZjI3ZGRiNjgzMyIsImFjY291bnRfaWQiOiI2ODRkMTdhMGZjNmExMGYyN2RkYjY4MzUiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3NDk4ODI4MzEsImV4cCI6MTc1MDQ4NzYzMX0.E2aX6s00YaM8UOc8uhGBh29NiWl6Y3fTrxpN3pChgHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "cl-x-token",
+						"value": "2be1a9b9-76e3-476a-a6fd-dc57270f872a",
+						"type": "text"
+					},
+					{
+						"key": "cl-x-event-id",
+						"value": "order.created",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"account_id\": \"684d1a53fc6a10f27ddb6840\",\n  \"payload\": {\n    \"order_id\": \"ORD123456\",\n    \"amount\": 299.99,\n    \"status\": \"confirmed\"\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/server/incoming_data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"server",
+						"incoming_data"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "cl-x-token",
+								"value": "2be1a9b9-76e3-476a-a6fd-dc57270f872a",
+								"type": "text"
+							},
+							{
+								"key": "cl-x-event-id",
+								"value": "order.created",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"account_id\": \"684d1a53fc6a10f27ddb6840\",\n  \"payload\": {\n    \"order_id\": \"ORD123456\",\n    \"amount\": 299.99,\n    \"status\": \"confirmed\"\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/server/incoming_data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"server",
+								"incoming_data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-EbkO5cmF6xe07NhSOvpsGSjqfUE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 14 Jun 2025 07:21:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Data Received\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get account ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGQxN2EwZmM2YTEwZjI3ZGRiNjgzMyIsImFjY291bnRfaWQiOiI2ODRkMTdhMGZjNmExMGYyN2RkYjY4MzUiLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE3NDk4ODI4MzEsImV4cCI6MTc1MDQ4NzYzMX0.E2aX6s00YaM8UOc8uhGBh29NiWl6Y3fTrxpN3pChgHY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"accounts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"accounts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "922"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39a-5NzSoQ6S8F2myBvPUM6Jhn/1QB0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 14 Jun 2025 08:56:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"684d17a0fc6a10f27ddb6835\",\n            \"account_name\": \"Example Corp\",\n            \"website\": \"https://example.com\",\n            \"created_by\": {\n                \"_id\": \"684d17a0fc6a10f27ddb6833\",\n                \"email\": \"admin@example.com\"\n            },\n            \"updated_by\": {\n                \"_id\": \"684d17a0fc6a10f27ddb6833\",\n                \"email\": \"admin@example.com\"\n            },\n            \"account_id\": \"bed225f5-3733-4b0b-a54c-a768dd7f715c\",\n            \"app_secret_token\": \"4d5c2c4d-dde3-4773-b44d-cd294e081394\",\n            \"createdAt\": \"2025-06-14T06:33:04.817Z\",\n            \"updatedAt\": \"2025-06-14T06:33:04.817Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"684d1a53fc6a10f27ddb6840\",\n            \"account_name\": \"New Company Name\",\n            \"website\": \"https://newcompany.com\",\n            \"created_by\": {\n                \"_id\": \"684d17a0fc6a10f27ddb6833\",\n                \"email\": \"admin@example.com\"\n            },\n            \"updated_by\": {\n                \"_id\": \"684d17a0fc6a10f27ddb6833\",\n                \"email\": \"admin@example.com\"\n            },\n            \"account_id\": \"23912ca1-d9d3-4b32-9475-28eaf7e4ceaa\",\n            \"app_secret_token\": \"2be1a9b9-76e3-476a-a6fd-dc57270f872a\",\n            \"createdAt\": \"2025-06-14T06:44:35.665Z\",\n            \"updatedAt\": \"2025-06-14T06:44:35.665Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
